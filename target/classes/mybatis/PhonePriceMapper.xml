@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sdust.crawler.mapper.PhonePriceMapper">
+
+  <sql id="Base_Column_List">
+    id, brand, model, price, status, channel, url, alias, create_time, update_time
+  </sql>
+
+  <select id="queryByConditions" resultType="PhonePriceDto">
+    select
+    <include refid="Base_Column_List" />
+    from crawler_phone_price
+    <where>
+      <if test="brand != null">and brand = #{brand}</if>
+      <if test="model != null">and model = #{model}</if>
+      <if test="create_time != null">and create_time <![CDATA[>=]]> #{create_time}</if>
+    </where>
+    limit 1 , 10
+  </select>
+
+  <insert id="insertBatch">
+    INSERT INTO crawler_phone_price
+    (brand, model, price, status, channel, url, alias, create_time, update_time)
+    VALUES
+    <foreach collection ="list" item="PhonePriceDto" separator =",">
+      (#{PhonePriceDto.brand}, #{PhonePriceDto.model}, #{PhonePriceDto.price}, #{PhonePriceDto.status}, #{PhonePriceDto.channel}, #{PhonePriceDto.url}
+      , #{PhonePriceDto.alias}, #{PhonePriceDto.create_time}, #{PhonePriceDto.update_time})
+    </foreach >
+  </insert>
+</mapper>

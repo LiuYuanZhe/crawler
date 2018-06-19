@@ -1,0 +1,51 @@
+package com.sdust.crawler.parser.exception;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.lang.reflect.Field;
+
+/**
+ * 注入某个属性异常
+ * 
+ * @author huchengyi
+ *
+ */
+public class FieldInjectException extends Exception {
+	
+	private static Log log = LogFactory.getLog(FieldInjectException.class);
+
+	private static final long serialVersionUID = 5698150653455275921L;
+
+	private Field field;
+
+	public FieldInjectException(Field field, String message) {
+		super(message);
+		this.field = field;
+	}
+
+	public FieldInjectException(Field field, String message, Throwable cause) {
+		super(message, cause);
+		this.field = field;
+	}
+
+	public Field getField() {
+		return field;
+	}
+
+	public void setField(Field field) {
+		this.field = field;
+	}
+
+	public static void log(Field field, String message, Throwable cause) {
+//		boolean debug = SpiderThreadLocal.get().getEngine().isDebug();
+		log.error(field.getName() + " render error : " + message);
+//		if(debug && cause != null) {
+			log.error(message, cause);
+//		}
+	}
+
+	public static void log(Field field, String message) {
+		log(field, message, null);
+	}
+}

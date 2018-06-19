@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sdust.crawler.mapper.CitycodeMapper">
+    <insert id="insertBatchCity">
+        INSERT INTO citycode
+        (cityname,citycode)
+        VALUES
+        <foreach collection ="list" item="CitycodeDto" separator =",">
+            (#{CitycodeDto.cityname}, #{CitycodeDto.citycode})
+        </foreach >
+    </insert>
+    <!--<select id="queryCitycodeBynum">-->
+        <!---->
+    <!--</select>-->
+    <select id="queryCitycodeBynum" resultType="java.lang.String" parameterType="int">
+        SELECT citycode FROM citycode_distinct LIMIT 1,#{num}
+    </select>
+</mapper>
+
