@@ -1,7 +1,4 @@
-package com.sdust.crawler.service;//package com.mobanker.crawler.service;
-//
-//import com.mobanker.crawler.dto.JobDetailDto;
-//import com.mobanker.crawler.utils.AppFinal;
+package com.sdust.crawler.service;
 //import org.elasticsearch.action.ActionFuture;
 //import org.elasticsearch.action.admin.cluster.health.ClusterHealthRequest;
 //import org.elasticsearch.action.admin.cluster.health.ClusterHealthResponse;
