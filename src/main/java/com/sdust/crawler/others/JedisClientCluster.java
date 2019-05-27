@@ -1,4 +1,4 @@
-package com.sdust.crawler.others;//package com.mobanker.crawler.service;
+package com.sdust.crawler.others;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
 //
