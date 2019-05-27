@@ -16,7 +16,7 @@
     <!--读取本地配置配置文件 -->
     <context:property-placeholder location="classpath:application.properties" />
     <!-- 读取配置中心配置 -->
-    <!--<bean class="com.mobanker.zkc.property.PropertyPlaceholderConfigurer">-->
+    <!--<bean class="com.lyz.zkc.property.PropertyPlaceholderConfigurer">-->
     <!--<property value="SYSTEM_PROPERTIES_MODE_OVERRIDE" name="systemPropertiesModeName"/>-->
     <!--<property value="true" name="ignoreResourceNotFound"/>-->
     <!--<property name="locations">-->
