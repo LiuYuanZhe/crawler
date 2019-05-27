@@ -1,6 +1,4 @@
-package com.sdust.crawler.others;//package com.mobanker.crawler.service;
-//
-//import com.mobanker.crawler.common.model.Task;
+package com.sdust.crawler.others;
 //
 //import java.util.Set;
 //
