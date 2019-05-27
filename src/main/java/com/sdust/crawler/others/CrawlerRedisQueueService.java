@@ -1,9 +1,7 @@
 package com.sdust.crawler.others;/*
-//package com.mobanker.crawler.service;
 //
 //import com.alibaba.fastjson.JSON;
 //import com.alibaba.fastjson.JSONObject;
-//import com.mobanker.crawler.common.model.Task;
 //import org.apache.commons.lang3.StringUtils;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
